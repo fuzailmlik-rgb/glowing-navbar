@@ -1,1 +1,156 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fuzail Glowing Website</title>
 
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: #050510;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.header {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 15px;
+  padding: 0 25px;
+  background: #101020;
+  position: relative;
+  z-index: 2;
+}
+
+.header a {
+  color: white;
+  text-decoration: none;
+  background: #050510;
+  padding: 12px 20px;
+  border-radius: 10px;
+  animation: rainbow 4s linear infinite;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.header a:hover {
+  color: cyan;
+  transform: scale(1.1);
+  animation-duration: 1s;
+}
+
+@keyframes rainbow {
+  0% {
+    box-shadow: 0 0 8px red, 0 0 18px red;
+  }
+  25% {
+    box-shadow: 0 0 8px yellow, 0 0 18px yellow;
+  }
+  50% {
+    box-shadow: 0 0 8px cyan, 0 0 18px cyan;
+  }
+  75% {
+    box-shadow: 0 0 8px magenta, 0 0 18px magenta;
+  }
+  100% {
+    box-shadow: 0 0 8px red, 0 0 18px red;
+  }
+}
+
+.stars {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.star {
+  position: absolute;
+  bottom: -30px;
+  width: 20px;
+  height: 20px;
+  background: var(--color);
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  filter:
+    drop-shadow(0 0 5px var(--color))
+    drop-shadow(0 0 12px var(--color));
+  animation: moveUp var(--speed) linear infinite;
+  animation-delay: var(--delay);
+}
+
+@keyframes moveUp {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(0.5);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-110vh) rotate(360deg) scale(1.5);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .header {
+    gap: 6px;
+    padding: 0 8px;
+  }
+
+  .header a {
+    padding: 10px 8px;
+    font-size: 12px;
+  }
+}
+</style>
+</head>
+
+<body>
+<nav class="header">
+  <a href="#">HOME</a>
+  <a href="#">ABOUT</a>
+  <a href="#">CONTACT</a>
+  <a href="#">SERVICES</a>
+</nav>
+
+<div class="stars">
+  <span class="star" style="left:5%;--color:#00ffff;--speed:6s;--delay:0s"></span>
+  <span class="star" style="left:15%;--color:#ff00ff;--speed:8s;--delay:2s"></span>
+  <span class="star" style="left:25%;--color:#00ff66;--speed:5s;--delay:1s"></span>
+  <span class="star" style="left:35%;--color:#ffff00;--speed:7s;--delay:3s"></span>
+  <span class="star" style="left:45%;--color:#ff3333;--speed:6s;--delay:1s"></span>
+  <span class="star" style="left:55%;--color:#0099ff;--speed:9s;--delay:2s"></span>
+  <span class="star" style="left:65%;--color:#ff8800;--speed:5s;--delay:0s"></span>
+  <span class="star" style="left:75%;--color:#cc66ff;--speed:7s;--delay:4s"></span>
+  <span class="star" style="left:85%;--color:#00ffff;--speed:6s;--delay:2s"></span>
+  <span class="star" style="left:95%;--color:#ff1493;--speed:8s;--delay:1s"></span>
+</div>
+</body>
+</html>
+```
