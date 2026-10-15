@@ -1,0 +1,50 @@
+   <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #080a14;
+            font-family: Arial, sans-serif;
+        }
+
+        .rainbow {
+            font-size: 70px;
+            font-weight: bold;
+            background: linear-gradient(
+                90deg,
+                red,
+                orange,
+                yellow,
+                lime,
+                cyan,
+                blue,
+                magenta,
+                red
+            );
+            background-size: 300%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: flow 4s linear infinite;
+        }
+
+        @keyframes flow {
+            from {
+                background-position: 0% center;
+            }
+
+            to {
+                background-position: 300% center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="rainbow">FUZEL</h1>
+
+</body>
+</html>
+```
